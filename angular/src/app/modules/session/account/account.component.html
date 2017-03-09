@@ -1,0 +1,13 @@
+<div class="container">
+  <div *ngIf="error" class="alert alert-danger" role="alert">{{error}}</div>
+  <form class="form-signin" (ngSubmit)="createAccount()">
+    <h2 class="form-signin-heading">Crear cuenta</h2>
+    <input type="email" id="inputEmail" [(ngModel)]='model.email' name="email" class="form-control" placeholder="Email address" required autofocus>
+    <input type="password" id="inputPassword" [(ngModel)]='model.password' name="password" class="form-control" placeholder="Password" required>
+    <input type="password" id="inputPasswordRe" [(ngModel)]='model.password_confirmation' name="password_confirmation" class="form-control" placeholder="Re Password" required>
+    <div>
+      <a [routerLink]="['/login']">Ingresar</a>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+  </form>
+</div> <!-- /container -->

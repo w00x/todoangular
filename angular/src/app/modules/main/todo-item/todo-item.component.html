@@ -1,0 +1,19 @@
+<div class="item">
+  <div class="row">
+    <div class="col-md-9">
+      <input type="checkbox" class="check" (click)="done(todo)" [(ngModel)]="todo.done">
+      <span *ngIf="!editable" [class.tachado]="todo.done">{{todo.desc}}</span>
+      <input *ngIf="editable" type="text" [(ngModel)]="todo.desc">
+    </div>
+
+    <button type="button" class="close" (click)="close(todo)">
+      <span aria-hidden="true">×</span>
+    </button>
+    <button *ngIf="!editable" type="button" class="close" (click)="doEditable()">
+      <span class="glyphicon glyphicon-pencil" style="font-size: 20px;" aria-hidden="true"></span>
+    </button>
+    <button *ngIf="editable" type="button" class="close" (click)="update(todo)">
+      <span class="glyphicon glyphicon-floppy-disk" style="font-size: 20px;" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
